@@ -153,7 +153,7 @@ class DCGAN_G(nn.Module):
         return self.main(x)
 
 class DCGAN_Gv1(nn.Module):
-    """ A version of DCGAN_G with UpsampleConvLayer instead of ConvTransposed """
+    """ A version of DCGAN_G with UpsampleConvLayer instead of ConvTranspose """
     def __init__(self, image_size, nc, nz, ngf, n_extra_layers=0):
         super(DCGAN_Gv1, self).__init__()
         assert image_size % 16 == 0, "image_size has to be a multiple of 16"
@@ -201,7 +201,7 @@ class DCGAN_Gv1(nn.Module):
         return self.main(x)
 
 class DCGAN_Gv2(nn.Module):
-    """ Similar to Ulyanov et. al. (supplementary material) """
+    """ Similar to Ulyanov et. al. Only first few layers use ConvTranspose """
     def __init__(self, image_size, nc, nz, ngf, n_extra_layers=0):
         super(DCGAN_Gv2, self).__init__()
         assert image_size % 16 == 0, "image_size has to be a multiple of 16"
